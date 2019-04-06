@@ -72,5 +72,16 @@ class ChampionshipsController extends Controller implements RESTActions
         }
     }
 
+    public function getShows($id)
+    {
+        $championship = Championship::find($id);
+        if ($championship == null)
+        {
+            return response()->json('Championship not found', Response::HTTP_NOT_FOUND);
+        }
+
+        return response()->json($championship->shows, Response::HTTP_OK);
+    }
+
 
 }

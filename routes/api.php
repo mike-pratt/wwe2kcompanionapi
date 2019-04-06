@@ -38,6 +38,7 @@ Route::prefix('v0')->group(function() {
         Route::get('championship', 'ChampionshipsController@getPaged');
         Route::get('championship/{id}', 'ChampionshipsController@getById');
         Route::get('championship/{id}/champion', 'ChampionshipsController@getChampion');
+        Route::get('championship/{id}/shows', 'ChampionshipsController@getShows');
         Route::post('championship', 'ChampionshipsController@create');
         Route::put('championship/{id}', 'ChampionshipsController@update');
         Route::delete('championship/{id}', 'ChampionshipsController@delete');

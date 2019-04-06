@@ -21,7 +21,7 @@ class Championship extends Model
     ];
 
 
-    public function show()
+    public function shows()
     {
         return $this->belongsToMany('App\Models\v0\Show');
     }
