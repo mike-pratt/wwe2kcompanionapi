@@ -24,6 +24,6 @@ class Show extends Model
 
     public function championships()
     {
-        return $this->hasMany('App\Models\v0\Championship');
+        return $this->belongsToMany('App\Models\v0\Championship');
     }
 }

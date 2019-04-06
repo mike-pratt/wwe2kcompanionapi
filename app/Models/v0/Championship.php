@@ -23,7 +23,7 @@ class Championship extends Model
 
     public function show()
     {
-        return $this->belongsTo('App\Models\v0\Show');
+        return $this->belongsToMany('App\Models\v0\Show');
     }
 
     public function wrestler()

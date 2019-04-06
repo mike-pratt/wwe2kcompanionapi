@@ -17,8 +17,8 @@ class CreateChampionshipsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('level');
-            $table->unsignedInteger('show_id')->nullable();
-            $table->foreign('show_id')->references('id')->on('shows');
+            $table->unsignedInteger('champion_id')->nullable();
+            $table->foreign('champion_id')->references('id')->on('wrestlers');
             $table->timestamps();
         });
     }

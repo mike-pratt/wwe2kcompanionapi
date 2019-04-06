@@ -25,8 +25,8 @@ class AddPrimaryDisplayToShow extends Migration
      */
     public function down()
     {
-        Schema::table('shows', function (Blueprint $table) {
-            Schema::dropIfExists('shows');
-        });
+//        Schema::table('shows', function (Blueprint $table) {
+//            Schema::dropColumn('primary_display');
+//        });
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddShowIdForeignToWrestlersTable extends Migration
+class CreateChampionshipShowTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,13 @@ class AddShowIdForeignToWrestlersTable extends Migration
      */
     public function up()
     {
-        Schema::table('wrestlers', function(Blueprint $table) {
+        Schema::create('championship_show', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('championship_id');
+            $table->unsignedInteger('show_id');
+            $table->timestamps();
+
+            $table->foreign('championship_id')->references('id')->on('championships');
             $table->foreign('show_id')->references('id')->on('shows');
         });
     }
@@ -25,6 +31,6 @@ class AddShowIdForeignToWrestlersTable extends Migration
      */
     public function down()
     {
-        // Schema::dropForeign(['show_id']);
+        Schema::dropIfExists('championship_show');
     }
 }
