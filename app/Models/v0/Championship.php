@@ -8,16 +8,14 @@ class Championship extends Model
 {
     protected $fillable = [
       'name',
-      'show_id',
       'level',
-      'wrestler_id'
+      'champion_id'
     ];
 
     public static $rules = [
         'name' => 'required|string|max:128',
         'level' => 'required|string|max:128',
-        'show_id' => 'integer',
-        'wrestler_id' => 'integer'
+        'champion_id' => 'integer'
     ];
 
 

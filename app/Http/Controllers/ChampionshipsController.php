@@ -41,8 +41,8 @@ class ChampionshipsController extends Controller implements RESTActions
         $this->validate($request, Championship::$rules);
         $championship = Championship::find($id);
         $championship->name = $request->input('name');
-        $championship->show_id = $request->input('show_id');
         $championship->level = $request->input('level');
+        $championship->champion_id = $request->input('champion_id');
         $championship->save();
 
         return response()->json($championship, Response::HTTP_ACCEPTED);
