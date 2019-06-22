@@ -29,7 +29,7 @@ Route::prefix('v0')->group(function() {
         Route::get('wrestler', 'WrestlersController@getPaged');
         Route::get('wrestler/{id}', 'WrestlersController@getById');
         Route::get('wrestler/{id}/rivalries', 'WrestlersController@getRivalries');
-        Route::get('wrestler/{id}/reigns', 'WrestlersController@getReigns');
+        Route::get('wrestler/{id}/championship-reigns', 'WrestlersController@getReigns');
         Route::post('wrestler', 'WrestlersController@create');
         Route::put('wrestler/{id}', 'WrestlersController@update');
         Route::delete('wrestler/{id}', 'WrestlersController@delete');

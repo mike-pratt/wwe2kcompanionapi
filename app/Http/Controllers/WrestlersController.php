@@ -44,7 +44,7 @@ class WrestlersController extends Controller implements RESTActions
 
     public function getReigns($id)
     {
-        $reigns = DB::table('championship_reigns')->where('wrestler_id', $id)->get();
+        $reigns = DB::table('championship_reigns')->where('wrestler_id', $id)->paginate(15);
         return response()->json($reigns);
     }
 
