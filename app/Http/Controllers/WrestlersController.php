@@ -36,9 +36,7 @@ class WrestlersController extends Controller implements RESTActions
 
     public function getRivalries($id)
     {
-        //$wrestler = Wrestler::find($id);
-       // $rivalries = $wrestler->rivalry;
-        $rivalries = DB::table('rivalries')->where('wrestler_id', $id)->orWhere('rival_id', $id)->get();
+        $rivalries = DB::table('rivalries')->where('wrestler_id', $id)->orWhere('rival_id', $id)->paginate(15);
         return response()->json($rivalries);
     }
 
