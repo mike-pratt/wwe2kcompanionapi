@@ -21,7 +21,6 @@ class Wrestler extends BaseModel
         'name' => 'required|string|max:128',
         'height' => 'required|string',
         'weight' => 'required|integer|max:599|min:99',
-        'show_id' => 'integer' // required
     ];
 
     // probably need special rules for height, such as measuring unit (metric, imperial), + conversions.
