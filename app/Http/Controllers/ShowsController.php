@@ -47,7 +47,7 @@ class ShowsController extends Controller implements RESTActions
     {
         $show = Show::find($id);
         if ($show != null) {
-            $titles = $show->championships;
+            $titles = $show->championships()->paginate(15);
             return response()->json($titles);
         } else {
             return response()->json('Show not found', Response::HTTP_NOT_FOUND);

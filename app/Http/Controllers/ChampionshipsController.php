@@ -80,7 +80,7 @@ class ChampionshipsController extends Controller implements RESTActions
             return response()->json('Championship not found', Response::HTTP_NOT_FOUND);
         }
 
-        return response()->json($championship->shows, Response::HTTP_OK);
+        return response()->json($championship->shows()->paginate(15), Response::HTTP_OK);
     }
 
 
